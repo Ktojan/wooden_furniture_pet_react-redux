@@ -5,7 +5,6 @@ import logo from './logo.png'
 import { useRouter } from 'next/router'
 
 export default function SiteHeader() {
-  const discount = 0; //todo
   const router = useRouter();
   const activePath = router.asPath;
 
@@ -15,7 +14,7 @@ export default function SiteHeader() {
         <div className={styles.left}>
           <div className={styles.logo}><Image src={logo} alt="Wooden Age store logo" /></div>
           <a href='/' className={(activePath === '/') ? styles.activeRoute : null} >Home</a>
-          <a href={`/catalog?homeDiscount=${discount}`} 
+          <a href={`/catalog`} 
           className={ activePath.includes('catalog') ? styles.activeRoute : null}
            >Catalog</a>
           {/* <Link href={{ pathname: '/catalog', query: { foo: discount } }}>Catalog</Link> */}

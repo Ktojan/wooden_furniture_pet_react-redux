@@ -11,8 +11,8 @@ const ProductDetails = ({ product, addToCart }) => {
         <button className={`button ${styles.addToCart}`} onClick={() => addToCart(product)}>Add to Cart</button>
         <Image
           src={(`/images/pieces/${product.imageName}`)}
-          width={340}
-          height={340}
+          width={240}
+          height={240}
           alt={product.name}
         />
       </div>

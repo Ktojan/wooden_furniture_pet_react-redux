@@ -4,7 +4,6 @@ import styles from './Cart.module.scss'
 
 export default function Cart({ cartItems, removeItemFromCart, changeQuantity, homeDiscount }) {
   function getCartTotal(discount) {
-    console.log(discount);
     const totalCost = cartItems.reduce((prev, curr) => {
       const itemPrice = (discount && discount > 0)
        ? curr.price * curr.quantity *(100 - discount)/100
@@ -25,13 +24,13 @@ export default function Cart({ cartItems, removeItemFromCart, changeQuantity, ho
     return (
       <>
       <ul className={styles.cart}>
-      { (homeDiscount && homeDiscount > 0) ? <p>Your discount is {homeDiscount}%</p> : null }
         {cartItems.map((product, i) => (
           <li className={styles.cartItem} key={i}>
             <CartItem product={product} removeItemFromCart={removeItemFromCart} changeQuantity={changeQuantity}/>
           </li >
         ))}
       </ul >
+      { (homeDiscount && homeDiscount > 0) ? <p>Your discount is {homeDiscount}%</p> : null }
       </>
     )
   }

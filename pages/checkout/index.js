@@ -1,21 +1,16 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import Cart from '../../components/cart'
 import styles from './Checkout.module.scss'
 
 function Checkout() {
-  const [cart, setCart] = useState({ products: [] })
-  function removeItemFromCart(product) {
-  }
-  function changeQuantity(product, delta) {
-  }
+  const cart = useSelector((state) => state.cartItems);
   
   return (
     <>
       <div className={styles.container}>
         <div className={styles.mainLeft}>
         <h2>Cart</h2>
-          <Cart cartItems={cart.products} removeItemFromCart={removeItemFromCart} changeQuantity={changeQuantity} />
+       <p>Items: {cart?.length}</p>  {/*  todo */}
         </div >
         <div className={styles.rightSidebar}>
           <h2>Details</h2>
