@@ -16,6 +16,5 @@ async function getProducts() {
 export default async function handler(req, res) {
   const albums = await getProducts()
 
-  // setTimeout(() => res.status(200).json(albums), 3000)
-  res.status(200).json(albums)
+  setTimeout(() => res.status(200).json(albums), 600)
 }
