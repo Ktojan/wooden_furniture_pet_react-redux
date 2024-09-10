@@ -26,6 +26,9 @@ function HomePage() {
         <button className="button cta">
           <Link href="/catalog?homeDiscount=12">Shop Now (-12%)</Link>
         </button>
+        <button className="button cta">
+          <Link href="/catalog?homeDiscount=3">Shop Later (-3%)</Link>
+        </button>
         </div>
         {/* <span className={styles.image}>
           <Image layout="fixed" height="200" width="200" src={theUndertaking} alt='' />
